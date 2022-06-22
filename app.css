@@ -1,0 +1,77 @@
+body {
+  background-color: gray;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10em;
+}
+
+#result {
+  background-color: black;
+  color: white;
+  width: 350px;
+  font-size: 40px;
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: monospace;
+}
+
+button {
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: 0;
+  font-size: 50px;
+  transition: 500ms;
+}
+
+button:hover {
+  background-color: white;
+  transition: 500ms;
+}
+
+.calc-row {
+  display: flex;
+}
+
+#clear {
+  width: 185px;
+}
+
+#backspace,
+#division {
+  width: 92.5px;
+}
+
+#zero {
+  width: 277.5px;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#multiplication,
+#minus,
+#plus,
+#equal {
+  width: 92.5px;
+}
+
+.orange {
+  background-color: #df974c;
+  color: white;
+}
+
+.orange:hover {
+  background-color: #daab7a;
+}
