@@ -22,7 +22,7 @@ const multiplication = document.querySelector("#multiplication");
 const minus = document.querySelector("#minus");
 const plus = document.querySelector("#plus");
 
-const addNum = (num) => {
+const onNumberClick = (num) => () => {
   if (result.innerText === "0") {
     result.innerText = `${num}`;
   } else if (result.innerText.length >= 10) {
@@ -32,45 +32,16 @@ const addNum = (num) => {
   }
 };
 
-zero.addEventListener("click", () => {
-  addNum(0);
-});
-
-one.addEventListener("click", () => {
-  addNum(1);
-});
-
-two.addEventListener("click", () => {
-  addNum(2);
-});
-
-three.addEventListener("click", () => {
-  addNum(3);
-});
-
-four.addEventListener("click", () => {
-  addNum(4);
-});
-
-five.addEventListener("click", () => {
-  addNum(5);
-});
-
-six.addEventListener("click", () => {
-  addNum(6);
-});
-
-seven.addEventListener("click", () => {
-  addNum(7);
-});
-
-eight.addEventListener("click", () => {
-  addNum(8);
-});
-
-nine.addEventListener("click", () => {
-  addNum(9);
-});
+zero.addEventListener("click", onNumberClick(0));
+one.addEventListener("click", onNumberClick(1));
+two.addEventListener("click", onNumberClick(2));
+three.addEventListener("click", onNumberClick(3));
+four.addEventListener("click", onNumberClick(4));
+five.addEventListener("click", onNumberClick(5));
+six.addEventListener("click", onNumberClick(6));
+seven.addEventListener("click", onNumberClick(7));
+eight.addEventListener("click", onNumberClick(8));
+nine.addEventListener("click", onNumberClick(9));
 
 clear.addEventListener("click", () => {
   result.innerText = "0";
