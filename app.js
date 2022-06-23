@@ -22,104 +22,54 @@ const multiplication = document.querySelector("#multiplication");
 const minus = document.querySelector("#minus");
 const plus = document.querySelector("#plus");
 
-zero.addEventListener("click", () => {
+const addNum = (num) => {
   if (result.innerText === "0") {
-    result.innerText = "0";
+    result.innerText = `${num}`;
   } else if (result.innerText.length >= 10) {
     result.innerText = result.innerText;
   } else {
-    result.innerText = result.innerText + "0";
+    result.innerText = result.innerText + `${num}`;
   }
+};
+
+zero.addEventListener("click", () => {
+  addNum(0);
 });
 
 one.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "1";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "1";
-  }
+  addNum(1);
 });
 
 two.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "2";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "2";
-  }
+  addNum(2);
 });
 
 three.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "3";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "3";
-  }
+  addNum(3);
 });
 
 four.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "4";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "4";
-  }
+  addNum(4);
 });
 
 five.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "5";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "5";
-  }
+  addNum(5);
 });
 
 six.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "6";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "6";
-  }
+  addNum(6);
 });
 
 seven.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "7";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "7";
-  }
+  addNum(7);
 });
 
 eight.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "8";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "8";
-  }
+  addNum(8);
 });
 
 nine.addEventListener("click", () => {
-  if (result.innerText === "0") {
-    result.innerText = "9";
-  } else if (result.innerText.length >= 10) {
-    result.innerText = result.innerText;
-  } else {
-    result.innerText = result.innerText + "9";
-  }
+  addNum(9);
 });
 
 clear.addEventListener("click", () => {
@@ -136,28 +86,26 @@ backspace.addEventListener("click", () => {
 });
 
 // Operators
-division.addEventListener("click", () => {
+const prevOp = (operator) => {
   runningTotal = result.innerText;
-  previousOperator = "/";
+  previousOperator = `${operator}`;
   result.innerText = "0";
+};
+
+division.addEventListener("click", () => {
+  prevOp(`/`);
 });
 
 multiplication.addEventListener("click", () => {
-  runningTotal = result.innerText;
-  previousOperator = "*";
-  result.innerText = "0";
+  prevOp("*");
 });
 
 minus.addEventListener("click", () => {
-  runningTotal = result.innerText;
-  previousOperator = "-";
-  result.innerText = "0";
+  prevOp("-");
 });
 
 plus.addEventListener("click", () => {
-  runningTotal = result.innerText;
-  previousOperator = "+";
-  result.innerText = "0";
+  prevOp("+");
 });
 
 equals.addEventListener("click", () => {
